@@ -3,5 +3,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-def index() -> None:
-    pass
+@app.get("/")
+async def root() -> dict:
+    return {"message": "Hello World"}
